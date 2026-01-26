@@ -18,3 +18,4 @@ samples, guidance on mobile development, and a full API reference.
 =======
 # NCKH_flutter_app
 >>>>>>> 7510974edbebbcba872f15b8863fb0f83c8fe8de
+> npm run dev -- --host 
