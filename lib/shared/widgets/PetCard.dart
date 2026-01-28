@@ -6,7 +6,7 @@ class PetCard extends StatelessWidget {
   PetCard({required this.pet});
 
   // Đổi localhost thành 10.0.2.2 để máy ảo hiểu
-  final String baseUrl = "http://192.168.137.197:5173/";
+  final String baseUrl = "http://10.0.2.2:8000";
 
   @override
   Widget build(BuildContext context) {
