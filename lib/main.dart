@@ -75,7 +75,7 @@ class _MainNavigationState extends State<MainNavigation> {
           BottomNavigationBarItem(icon: Icon(Icons.pets), label: 'Thư viện'),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
-            label: 'Ghép đôi',
+            label: 'Tìm vật nuôi',
           ),
         ],
       ),

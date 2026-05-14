@@ -76,7 +76,7 @@ class PetDetailScreen extends StatelessWidget {
                 children: [
                   // 2. Title Section
                   Text(
-                    pet['name'],
+                    _toTitleCase(pet['name'].toString()),
                     style: const TextStyle(fontSize: 32, fontWeight: FontWeight.w900, color: Color(0xFF0F172A)),
                   ),
                   const SizedBox(height: 8),
@@ -138,20 +138,27 @@ class PetDetailScreen extends StatelessWidget {
                     style: const TextStyle(fontSize: 16, color: Color(0xFF475569), height: 1.6),
                   ),
 
-                  const SizedBox(height: 120),
+                  const SizedBox(height: 32),
                 ],
               ),
             ),
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
-        backgroundColor: Colors.orange,
-        label: const Text("LIÊN HỆ NGAY", style: TextStyle(fontWeight: FontWeight.bold)),
-        icon: const Icon(LucideIcons.messageSquare),
-      ),
+
     );
+  }
+
+  // Viết hoa chữ cái đầu mỗi từ trong tên giống loài
+  String _toTitleCase(String text) {
+    return text
+        .replaceAll('_', ' ')
+        .split(' ')
+        .map((word) {
+          if (word.isEmpty) return word;
+          return word[0].toUpperCase() + word.substring(1).toLowerCase();
+        })
+        .join(' ');
   }
 
   Widget _buildGlassTag(String label, Color color, Color textColor) {

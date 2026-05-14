@@ -51,7 +51,7 @@ class PetCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    pet['name'],
+                    _toTitleCase(pet['name'].toString()),
                     style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -86,5 +86,16 @@ class PetCard extends StatelessWidget {
         ),
       ),
     );
+  }
+  // Viết hoa chữ cái đầu mỗi từ trong tên giống loài
+  String _toTitleCase(String text) {
+    return text
+        .replaceAll('_', ' ')
+        .split(' ')
+        .map((word) {
+          if (word.isEmpty) return word;
+          return word[0].toUpperCase() + word.substring(1).toLowerCase();
+        })
+        .join(' ');
   }
 }
